@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAM DIGITAL</title>
+</head>
+<body>
+
+<div id="clock"></div>  
+
+    <style>
+        /* mengatur warna latar belakang */
+    body {
+    /* background-color:#15123d; */
+    /* background-color:#e2d9dc; */
+    /* background-color:#6a5051; */
+    /* background-color:#000000;  */
+    /* background-color:#f7e6dc;  */
+    /* background-color:#031b3d;   */
+    background-color: #a5826c;
+}
+
+/* mengatur posisi dan tampilan pada bagian jam */
+    /* #clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    /* color: #d4ab03; */
+    /* color: #22191c; */
+    /* color: #b0b0b0; */
+    /* color: #031b3d; */
+    /* color: #a5826c; */
+    /* color:#031b3d; */
+
+    /* text-shadow: 5px 2px 4px rgba(0, 0, 0, 0.5); 
+}*/ 
+
+/* mengatur posisi dan tampilan pada bagian jam */
+#clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  color:#031b3d;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: pulse 1s infinite;
+}
+
+/* animasi pulsasi */
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 0px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 0px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Styling the body */
+body {
+  background: linear-gradient(to bottom, #4d536d, #000000);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Styling the clock container */
+#clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: pulse 1s infinite;
+}
+
+/* Animating the clock text */
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 0px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 0px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* Adding a subtle gradient to the clock text */
+#clock:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff, rgba(255, 255, 255, 0));
+  z-index: -1;
+  opacity: 0.2;
+}
+
+</style>
+
+    <script>
+        setInterval(() => {
+            let date = new Date()
+            let clock = document.getElementById('clock')
+            clock.innerHTML =
+            date.getHours()+":"+
+            date.getMinutes()+":"+
+            date.getSeconds()
+        }, 1000);
+    </script>
+</body>
+</html>
